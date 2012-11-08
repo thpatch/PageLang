@@ -27,9 +27,13 @@ $wgExtensionMessagesFiles['PageLangMagic'] = $dir . 'PageLang.i18n.magic.php';
 
 $wgHooks['ParserGetVariableValueSwitch'][] = 'wfPageLangAssignValue';
 function wfPageLangAssignValue( &$parser, &$cache, &$magicWordId, &$ret ) {
-    if ( 'pagelang' == $magicWordId ) {
-            // We found a value
+    switch ( $magicWordId ) {
+		case 'pagelang':
 			$ret = $parser->getTargetLanguage()->mCode;
+			break;
+		case 'intlang':
+			$ret = $parser->getOptions()->getUserLang();
+			break;
     }
     return true;
 }
@@ -37,5 +41,6 @@ function wfPageLangAssignValue( &$parser, &$cache, &$magicWordId, &$ret ) {
 $wgHooks['MagicWordwgVariableIDs'][] = 'wfPageLangVariableIds';
 function wfPageLangVariableIds( &$variableIds ) {
 	$variableIds[] = 'pagelang';
+	$variableIds[] = 'intlang';
 	return true;
 }
