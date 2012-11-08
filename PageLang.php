@@ -29,13 +29,7 @@ $wgHooks['ParserGetVariableValueSwitch'][] = 'wfPageLangAssignValue';
 function wfPageLangAssignValue( &$parser, &$cache, &$magicWordId, &$ret ) {
     if ( 'pagelang' == $magicWordId ) {
             // We found a value
-            global $wgTitle;
-            if($wgTitle) {
-	            $ret = $wgTitle->getPageLanguage()->mCode;
-	        }
-            /*if( 'ja' == $ret) {
-            	$ret = "";
-            }*/
+			$ret = $parser->getTargetLanguage()->mCode;
     }
     return true;
 }
