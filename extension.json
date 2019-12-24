@@ -5,16 +5,16 @@
 	"description": "Defines a variable that contains the current page content language",
 	"type": "variable",
 	"requires": {
-		"MediaWiki": ">= 1.29.0"
+		"MediaWiki": ">= 1.31.0"
 	},
 	"ExtensionMessagesFiles": {
 		"PageLangMagic": "PageLang.i18n.magic.php"
 	},
 	"Hooks": {
-		"ParserGetVariableValueSwitch": "PageLang::onParserGetVariableValueSwitch",
-		"MagicWordwgVariableIDs": "PageLang::onMagicWordwgVariableIDs"
+		"ParserGetVariableValueSwitch": "thpatch\\pagelang\\Hooks::onParserGetVariableValueSwitch",
+		"MagicWordwgVariableIDs": "thpatch\\pagelang\\Hooks::onMagicWordwgVariableIDs"
 	},
-	"AutoloadClasses": {
-		"PageLang": "PageLang.php"
+	"AutoloadNamespaces": {
+		"thpatch\\pagelang\\": "includes/"
 	}
 }

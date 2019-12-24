@@ -1,10 +1,8 @@
 <?php
 
-if( !defined( 'MEDIAWIKI' ) ) {
-	die( "This is not a valid entry point.\n" );
-}
+namespace thpatch\pagelang;
 
-class PageLang {
+class Hooks {
 	public static function onParserGetVariableValueSwitch( $parser, &$variableCache, &$magicWordId, &$ret, $frame) {
 		switch ( $magicWordId ) {
 			case 'pagelang':
