@@ -1,15 +1,9 @@
 <?php
-/**
- * Internationalization file for NumberOfWikis extension.
- *
- * @file
- * @ingroup Extensions
- */
 
-$magicWords = array();
+$magicWords = [];
 
 /** English (English) */
-$magicWords['en'] = array(
-	'pagelang' => array( 0, 'pagelang' ),
-	'intlang' => array( 0, 'intlang' ),
-);
+$magicWords['en'] = [
+	'pagelang' => [ 0, 'pagelang' ],
+	'intlang' => [ 0, 'intlang' ],
+];
