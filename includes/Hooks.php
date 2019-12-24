@@ -6,7 +6,7 @@ class Hooks {
 	public static function onParserGetVariableValueSwitch( $parser, &$variableCache, &$magicWordId, &$ret, $frame) {
 		switch ( $magicWordId ) {
 			case 'pagelang':
-				$ret = $parser->getTargetLanguage()->mCode;
+				$ret = $parser->getTargetLanguage()->getCode();
 				break;
 			case 'intlang':
 				$ret = $parser->getOptions()->getUserLang();
